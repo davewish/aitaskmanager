@@ -273,16 +273,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
      }
      ```
 
-### Additional Notes
-- **Consistency**: The `README.md` now aligns with your use of **Create React App** and **JDK 17**, ensuring all instructions are accurate for your setup.
-- **Nested Git Removal**: If you’ve already removed the nested `.git/` directory in `frontend/`, the `README.md` above is sufficient for ongoing development. If not, complete the removal steps before proceeding.
-- **Verification**:
-  - Confirm the nested `.git/` is gone: `ls -a frontend/` should not show `.git/`.
-  - Run `git status` in the root to ensure `frontend/` is tracked.
-  - Test locally with `docker-compose up --build`.
-  - Push changes to your monorepo’s remote repository:
-    ```bash
-    git push origin main
-    ```
+
 
 If you need further modifications (e.g., specific code snippets for `package.json`, additional setup steps, or clarification on any section), let me know!
