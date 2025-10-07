@@ -1,0 +1,48 @@
+# Root .gitignore for task-manager monorepo
+
+# IntelliJ IDEA (Backend)
+backend/.idea/
+backend/*.iml
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/target/
+
+# VS Code (Frontend)
+frontend/.vscode/*
+!frontend/.vscode/settings.json  # Keep if you want to share specific VS Code settings
+frontend/.history/
+
+# Node.js (Frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+frontend/*.log
+frontend/npm-debug.log
+frontend/yarn-error.log
+
+# Java/Maven (Backend)
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+backend/pom.xml.versionsBackup
+backend/*.jar
+backend/*.war
+
+# Docker
+*.dockerignore
+Dockerfile.local
+*.tar.gz
+docker-compose.override.yml
+
+# Terraform (Infrastructure)
+infrastructure/terraform/.terraform/
+infrastructure/terraform/.terraform.lock.hcl
+infrastructure/terraform/terraform.tfstate
+infrastructure/terraform/terraform.tfstate.backup
+infrastructure/terraform/*.tfvars
+infrastructure/terraform/plan.out
+
+# AWS Credentials
+*.
