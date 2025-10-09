@@ -33,6 +33,8 @@ public class Task {
     @Column
     private Integer  priority;
     @Column
+    private String summary;
+    @Column
     private String attachUrl;
 
     @ManyToOne
