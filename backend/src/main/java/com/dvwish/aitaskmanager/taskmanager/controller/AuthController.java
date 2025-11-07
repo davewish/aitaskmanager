@@ -2,6 +2,7 @@ package com.dvwish.aitaskmanager.taskmanager.controller;
 
 import com.dvwish.aitaskmanager.taskmanager.dto.AssignRoleRequestDTO;
 import com.dvwish.aitaskmanager.taskmanager.dto.LoginRequestDTO;
+import com.dvwish.aitaskmanager.taskmanager.dto.RegisterRequestDTO;
 import com.dvwish.aitaskmanager.taskmanager.service.CognitoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final CognitoService cognitoService;
+
+
+    @PostMapping("/register")
+    public ResponseEntity<String> register(@RequestBody RegisterRequestDTO registerRequestDTO) {
+        cognitoService.registerUser(registerRequestDTO.getEmail(), registerRequestDTO.getUsername(), registerRequestDTO.getPassword());
+        return ResponseEntity.ok("User registered successfully");
+    }
+
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequestDTO request) {
         String token = cognitoService.authenticateUser(request.getEmail(), request.getPassword());
@@ -27,7 +36,6 @@ public class AuthController {
         cognitoService.assignRole(request.getEmail(), request.getRole());
         return ResponseEntity.ok("Role assigned successfully");
     }
-
 
 
 }
