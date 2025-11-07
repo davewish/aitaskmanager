@@ -46,15 +46,17 @@ public class Task {
     @Column
     private String summary;
     @Column
-    private String attachUrl;
+    private String attachmentUrl;
 
     @ManyToOne
     @JoinColumn(name="assignee_id")
     private User assignee;
+
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL , orphanRemoval = true)
     private List<Comment> comments= new ArrayList<>();
     @Column
     private LocalDateTime createdAt;
+    @Column
     private LocalDateTime updatedAt;
     @PrePersist
     protected  void onCreate(){
